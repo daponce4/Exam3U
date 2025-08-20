@@ -1,3 +1,4 @@
+const x = 1
 export function calcWeightedGrade(items) {
   if (!Array.isArray(items)) throw new TypeError("items debe ser un arreglo");
 
