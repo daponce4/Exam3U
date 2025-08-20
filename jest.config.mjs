@@ -1,4 +1,7 @@
 export default {
   testEnvironment: 'node',
-  transform: {}, // evita conflictos con Babel
+  transform: {},                 // ESM sin Babel
+  collectCoverage: true,         // asegura cobertura siempre
+  coverageDirectory: 'coverage',
+  coverageReporters: ['json-summary', 'text', 'lcov'] // <-- genera coverage-summary.json
 };
