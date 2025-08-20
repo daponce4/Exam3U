@@ -13,8 +13,9 @@ export default [
       }
     },
     rules: {
-      ...js.configs.recommended.rules
-    }
+            semi : ['error', 'always'],
+            quotes : ['error', 'single']
+        }
   },
   {
     files: ["**/__tests__/**/*.js"],

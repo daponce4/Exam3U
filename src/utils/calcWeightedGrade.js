@@ -1,4 +1,7 @@
-
+function ejemploError() {
+  var nombre = "Diego" // ← sin punto y coma, usa var
+  console.log(nombre)
+}
 export function calcWeightedGrade(items) {
   if (!Array.isArray(items)) throw new TypeError("items debe ser un arreglo");
 
