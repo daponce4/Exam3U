@@ -1,0 +1,42 @@
+name: CI - Notas & Estadística
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run tests with coverage
+        run: npm test -- --coverage
+
+      - name: Check coverage threshold
+        run: |
+          node -e "
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('coverage/coverage-summary.json'));
+          const { lines, branches } = data.total;
+          if (lines.pct < 85 || branches.pct < 85) {
+            console.error('❌ Cobertura insuficiente');
+            process.exit(1);
+          } else {
+            console.log('✅ Cobertura OK');
+          }
+          "
