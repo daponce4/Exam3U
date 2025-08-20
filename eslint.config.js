@@ -1,12 +1,12 @@
-import js from "@eslint/js";
-import globals from "globals";
+import js from '@eslint/js';
+import globals from 'globals';
 
 export default [
   {
-    files: ["**/*.js"],
+    files: ['**/*.js'],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       globals: {
         ...globals.node,
         ...globals.browser
@@ -18,7 +18,7 @@ export default [
         }
   },
   {
-    files: ["**/__tests__/**/*.js"],
+    files: ['**/__tests__/**/*.js'],
     languageOptions: {
       globals: {
         ...globals.jest
