@@ -1,9 +1,9 @@
-const x = 1
+
 export function calcWeightedGrade(items) {
   if (!Array.isArray(items)) throw new TypeError("items debe ser un arreglo");
 
-  let totalWeight = 0;
-  let totalScore = 0;
+  let totalWeight = 0
+  let totalScore = 0
 
   for (const item of items) {
     if (

@@ -13,7 +13,7 @@ export default [
       }
     },
     rules: {
-      // puedes agregar reglas aquí si lo deseas
+      ...js.configs.recommended.rules
     }
   },
   {
